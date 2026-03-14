@@ -10,14 +10,14 @@ export default function Index() {
 
   useEffect(() => {
     if (!loading && !user) {
-      router.replace("/login");
+      router.replace("/(auth)/login");
     }
   }, [user, loading]);
 
   const handleLogout = async () => {
     try {
       await logout();
-      router.replace("/login");
+      router.replace("/(auth)/login");
     } catch (error) {
       console.error("Logout error:", error);
     }
